@@ -10,7 +10,7 @@ import Grid from '@mui/material/Grid';
 
 import './Login.css';
 
-const Login = () => {
+const Forgot = () => {
   const [state, setState] = React.useState({
     email: '',
     password: '',
@@ -28,7 +28,7 @@ const Login = () => {
         <Avatar className='avatar'>
           <LockIcon />
         </Avatar>
-        <Typography variant='h5'>Academic Tracking: Login</Typography>
+        <Typography variant='h5'>Academic Tracking: Forgot Password</Typography>
         <form className='form' onSubmit={handleSubmit}>
           <div style={{ marginBottom: '15px' }}>
             <TextField
@@ -44,28 +44,15 @@ const Login = () => {
               }}
             />
           </div>
-          <div style={{ marginBottom: '15px' }}>
-            <TextField
-              required
-              fullWidth
-              type='password'
-              label='Password'
-              value={state.password}
-              onChange={(event) => {
-                setState((st) => {
-                  return { ...st, password: event.target.value };
-                });
-              }}
-            />
-          </div>
+
           <div>
             <Button type='submit' variant='contained' fullWidth>
-              Login
+              Reset Password
             </Button>
             <Grid container style={{ marginTop: '15px' }}>
               <Grid item xs>
-                <a href='/forgot' className='link'>
-                  Forgot Password
+                <a href='/login' className='link'>
+                  Sign in
                 </a>
               </Grid>
               <Grid item xs>
@@ -81,4 +68,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Forgot;

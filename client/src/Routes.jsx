@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import Register from './components/Register';
 import Create from './components/Create';
+import Forgot from './components/Forgot';
 
 const Routes = () => {
   return (
@@ -14,6 +15,7 @@ const Routes = () => {
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/create' component={Create} />
+          <Route exact path='/forgot' component={Forgot} />
         </Switch>
       </BrowserRouter>
     </div>
