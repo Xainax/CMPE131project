@@ -50,11 +50,9 @@ def sign_up():
         elif '@' not in email:
             flash('Email must contain an @ symbol to be valid.', category='error')
         elif len(firstName) < 2:
-            flash(
-                'First name must contain more than 1 character to be valid.', category='error')
+            flash('First name must contain more than 1 character to be valid.', category='error')
         elif len(password1) >= 8:  # Password should contain special chars?
-            flash('Password must be at least 8 characters to be valid.',
-                  category='error')
+            flash('Password must be at least 8 characters to be valid.', category='error')
         elif password1 != password2:
             flash('Passwords do not match', category='error')
         else:
