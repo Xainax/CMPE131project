@@ -50,8 +50,9 @@ def sign_up():
         elif '@' not in email:
             flash('Email must contain an @ symbol to be valid.', category='error')
         elif len(firstName) < 2:
-            flash('First name must contain more than 1 character to be valid.', category='error')
-        elif len(password1) >= 8:  # Password should contain special chars?
+            flash(
+                'First name must contain more than 1 character to be valid.', category='error')
+        elif len(password1) < 8:
             flash('Password must be at least 8 characters to be valid.', category='error')
         elif password1 != password2:
             flash('Passwords do not match', category='error')
@@ -59,7 +60,7 @@ def sign_up():
             new_user = User(email=email, firstName=firstName, password=generate_password_hash(password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
-            login_user(user, remember=True)
+            login_user(new_user, remember=True)
             flash('Account creation successful', category='success')
             return redirect(url_for('views.home'))
 
