@@ -6,6 +6,16 @@ from . import db
 import json
 
 views = Blueprint('views', __name__)
+events = [
+    {
+        'todo' : 'Event',
+        'date' : '2021-12-01',
+    },
+    {
+        'todo' : 'Eat Hotpot',
+        'date' : '2021-12-02',
+    }
+]
 
 
 @views.route('/', methods=['GET', 'Post'])
