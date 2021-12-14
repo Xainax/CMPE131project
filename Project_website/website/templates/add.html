@@ -1,0 +1,21 @@
+{% extends "base.html"%} {% block title %}Add Event{% endblock %} {%block content%}
+<!--used this video as reference: https://www.youtube.com/watch?v=CiuC5PF4I-A-->
+<h1>This is the Add Event page</h1>
+<div class ="container">
+    <form action ="/add" method="POST">
+        <div class="mb-3">
+          <label for="title" class="form-label">Event title</label>
+          <input type="text" class="form-control" name="title" id="title" placeholder="Enter the event title">
+        </div>
+        <div class="mb-3">
+          <label for="start" class="form-label">Event Start Date</label>
+          <input type="text" class="form-control" name="start" id="start" placeholder="Enter yyyy-mm-ddThh:mm (Ignore Thh:mm if all day)">
+        </div>
+        <div class="mb-3">
+          <label for="end" class="form-label">Event End Date</label>
+          <input type="text" class="form-control" name="end" id="end" placeholder="Leave empty if event is all day">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+{% endblock %}
