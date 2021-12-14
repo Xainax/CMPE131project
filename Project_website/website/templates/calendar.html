@@ -1,8 +1,7 @@
 {% extends "base.html"%} {% block title %}Home{% endblock %} {%block content%}
 <h1>This is the calendar page</h1>
-<!--used js file from https://www.jsdelivr.com/package/npm/fullcalendar-->
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
 </head>
 <body>
@@ -13,14 +12,14 @@
             events : [
                 {% for event in events %}
                 {
-                    title : '{{event.todo}}',
-                    start : '{{event.date}}',
+                    title: '{{event.title}}',
+                    start: '{{event.start}}',
+                    end : '{{event.end}}',
                 },
                 {% endfor %}
-            ]
+            ],
         });
         calendar.render();
     </script>
 </body>
 {% endblock %}
-
